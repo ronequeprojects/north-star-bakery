@@ -158,13 +158,18 @@ function validateInquiryForm(form) {
 
 function restoreCustomerData(form) {
   const customer = readStorage(storageKeys.customer, {});
+  let restoredData = false;
   if (customer.name) form.elements.name.value = customer.name;
   if (customer.email) form.elements.email.value = customer.email;
+  restoredData = Boolean(customer.name || customer.email);
 
   const favorites = getFavoriteProducts();
   if (favorites.length > 0 && !form.elements["item-details"].value) {
     form.elements["item-details"].value = `I am interested in: ${favorites.map((product) => product.requestText).join(", ")}.`;
+    restoredData = true;
   }
+
+  document.querySelector("#storage-notice").hidden = !restoredData;
 }
 
 function initializeInquiryForm() {
