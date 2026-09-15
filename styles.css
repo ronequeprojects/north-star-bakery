@@ -404,6 +404,15 @@ fieldset.field-error {
   display: block;
 }
 
+.storage-notice {
+  background: #e7f5e8;
+  border-left: 0.35rem solid #2e6b36;
+  color: #214f28;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding: 0.75rem 1rem;
+}
+
 video {
   aspect-ratio: 16 / 9;
   background: var(--charcoal);
