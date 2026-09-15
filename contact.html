@@ -6,6 +6,7 @@
   <meta name="description" content="Contact North Star Bakery or request a preorder pickup.">
   <title>North Star Bakery | Contact</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -49,35 +50,42 @@
 
       <section class="form-section" aria-labelledby="form-heading">
         <h2 id="form-heading">Send an inquiry</h2>
-        <form action="#" method="post">
+        <form id="inquiry-form" action="#" method="post" novalidate>
           <div class="form-row">
             <div class="form-field">
               <label for="name">Name <span aria-hidden="true">*</span></label>
-              <input type="text" id="name" name="name" autocomplete="name" required>
+              <input type="text" id="name" name="name" autocomplete="name" aria-describedby="name-error" required>
+              <p class="error-message" id="name-error" aria-live="polite"></p>
             </div>
             <div class="form-field">
               <label for="email">Email <span aria-hidden="true">*</span></label>
-              <input type="email" id="email" name="email" autocomplete="email" required>
+              <input type="email" id="email" name="email" autocomplete="email" aria-describedby="email-error" required>
+              <p class="error-message" id="email-error" aria-live="polite"></p>
             </div>
           </div>
 
           <div class="form-field">
             <label for="pickup-date">Preferred pickup date <span aria-hidden="true">*</span></label>
-            <input type="date" id="pickup-date" name="pickup-date" required>
+            <input type="date" id="pickup-date" name="pickup-date" aria-describedby="pickup-date-help pickup-date-error" required>
+            <p class="field-help" id="pickup-date-help">Please allow at least two days for preparation.</p>
+            <p class="error-message" id="pickup-date-error" aria-live="polite"></p>
           </div>
 
-          <fieldset>
+          <fieldset id="request-type-group" aria-describedby="request-type-error">
             <legend>Request type <span aria-hidden="true">*</span></legend>
             <div class="choice-row">
               <label><input type="radio" name="request-type" value="preorder" required> Preorder</label>
               <label><input type="radio" name="request-type" value="general-question"> General question</label>
               <label><input type="radio" name="request-type" value="event-planning"> Event planning</label>
             </div>
+            <p class="error-message" id="request-type-error" aria-live="polite"></p>
           </fieldset>
 
           <div class="form-field">
             <label for="item-details">Item details <span aria-hidden="true">*</span></label>
-            <textarea id="item-details" name="item-details" rows="5" required placeholder="List the items, quantities, flavors, or occasion."></textarea>
+            <textarea id="item-details" name="item-details" rows="5" required minlength="10" aria-describedby="item-details-help item-details-error" placeholder="List the items, quantities, flavors, or occasion."></textarea>
+            <p class="field-help" id="item-details-help">Use at least 10 characters so we can understand your request.</p>
+            <p class="error-message" id="item-details-error" aria-live="polite"></p>
           </div>
 
           <div class="form-field">
@@ -87,6 +95,7 @@
 
           <p class="required-note"><span aria-hidden="true">*</span> Required field</p>
           <button type="submit">Submit request</button>
+          <div id="form-status" class="form-status" role="status" aria-live="polite" tabindex="-1"></div>
         </form>
       </section>
     </div>
