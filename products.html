@@ -6,6 +6,7 @@
   <meta name="description" content="Browse breads, pastries, and cakes from North Star Bakery.">
   <title>North Star Bakery | Products</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -35,22 +36,38 @@
     <section class="content-section" aria-labelledby="categories-heading">
       <h2 id="categories-heading">Bakery categories</h2>
       <div class="card-row product-row">
-        <article class="card product-card">
+        <article class="card product-card" data-product-id="breads">
           <h3>Breads</h3>
           <p>Country sourdough, honey oat, multigrain, and rotating seasonal loaves.</p>
           <p class="price">$6–$12</p>
+          <button class="favorite-button" type="button" data-favorite-id="breads" aria-pressed="false">Add to favorites</button>
         </article>
-        <article class="card product-card">
+        <article class="card product-card" data-product-id="pastries">
           <h3>Pastries</h3>
           <p>Croissants, fruit danishes, cinnamon rolls, scones, and muffins.</p>
           <p class="price">$3–$7</p>
+          <button class="favorite-button" type="button" data-favorite-id="pastries" aria-pressed="false">Add to favorites</button>
         </article>
-        <article class="card product-card">
+        <article class="card product-card" data-product-id="cakes">
           <h3>Cakes</h3>
           <p>Layer cakes, sheet cakes, and cupcakes customized for celebrations.</p>
           <p class="price">$32–$95</p>
+          <button class="favorite-button" type="button" data-favorite-id="cakes" aria-pressed="false">Add to favorites</button>
         </article>
       </div>
+
+      <aside class="favorites-panel" aria-labelledby="favorites-heading" aria-live="polite">
+        <div>
+          <p class="eyebrow">Saved for your visit</p>
+          <h3 id="favorites-heading">Your bakery favorites (<span id="favorite-count">0</span>)</h3>
+          <p id="favorites-empty">Choose any categories above to build a shortlist for your preorder.</p>
+          <ul id="favorites-list" class="favorites-list"></ul>
+        </div>
+        <div class="favorites-actions">
+          <a id="request-favorites" class="button is-disabled" href="contact.html" aria-disabled="true">Request these items</a>
+          <button id="clear-favorites" class="secondary-button" type="button" disabled>Clear favorites</button>
+        </div>
+      </aside>
     </section>
 
     <section class="content-section signature-section" aria-labelledby="signature-heading">
