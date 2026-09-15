@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact North Star Bakery or request a preorder pickup.">
+  <title>North Star Bakery | Contact</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="North Star Bakery home">
+        <img src="media/bakery-logo_c.png" alt="North Star Bakery logo">
+      </a>
+      <nav aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a class="active" href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="page-intro">
+      <p class="eyebrow">Let’s plan your order</p>
+      <h1>Contact and preorder requests</h1>
+      <p>Tell us what you need and your preferred pickup date. A team member will follow up to confirm availability, pricing, and allergy information.</p>
+    </section>
+
+    <div class="content-section contact-layout">
+      <section class="visit-details" aria-labelledby="details-heading">
+        <h2 id="details-heading">Bakery details</h2>
+        <address>
+          <strong>North Star Bakery</strong><br>
+          18 Market Lane<br>
+          North Star, MN 55101<br>
+          <a href="mailto:hello@northstarbakery.example">hello@northstarbakery.example</a><br>
+          <a href="tel:+15550182733">(555) 018-BREAD</a>
+        </address>
+        <h3>Hours</h3>
+        <p>Tuesday–Friday: 7 a.m.–6 p.m.<br>Saturday–Sunday: 8 a.m.–3 p.m.<br>Monday: Closed</p>
+        <p class="media-note">This is a student project for a fictional client. Contact information is for demonstration only.</p>
+      </section>
+
+      <section class="form-section" aria-labelledby="form-heading">
+        <h2 id="form-heading">Send an inquiry</h2>
+        <form action="#" method="post">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="name">Name <span aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" autocomplete="name" required>
+            </div>
+            <div class="form-field">
+              <label for="email">Email <span aria-hidden="true">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="pickup-date">Preferred pickup date <span aria-hidden="true">*</span></label>
+            <input type="date" id="pickup-date" name="pickup-date" required>
+          </div>
+
+          <fieldset>
+            <legend>Request type <span aria-hidden="true">*</span></legend>
+            <div class="choice-row">
+              <label><input type="radio" name="request-type" value="preorder" required> Preorder</label>
+              <label><input type="radio" name="request-type" value="general-question"> General question</label>
+              <label><input type="radio" name="request-type" value="event-planning"> Event planning</label>
+            </div>
+          </fieldset>
+
+          <div class="form-field">
+            <label for="item-details">Item details <span aria-hidden="true">*</span></label>
+            <textarea id="item-details" name="item-details" rows="5" required placeholder="List the items, quantities, flavors, or occasion."></textarea>
+          </div>
+
+          <div class="form-field">
+            <label for="allergy-notes">Allergy notes, if applicable</label>
+            <textarea id="allergy-notes" name="allergy-notes" rows="3" placeholder="Describe any allergies or dietary concerns."></textarea>
+          </div>
+
+          <p class="required-note"><span aria-hidden="true">*</span> Required field</p>
+          <button type="submit">Submit request</button>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p><strong>North Star Bakery</strong> · Handmade for our community</p>
+    <p><a href="products.html">View products</a></p>
+  </footer>
+</body>
+</html>
